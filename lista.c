@@ -176,7 +176,6 @@ remove_by_index(int num) {
 
 void remove_by_val(node_t * head, int req)
 {
-    int retval = 0;
     node_t * current = head;
 
     while (current != NULL) {
@@ -212,6 +211,7 @@ int main() {
 	// Wypisz wszystkie elemnty na liście tera zlista zawiera 6 elementów
 	print_list( list );
 	printf("------------------\n");
+	remove_by_val( list, 4);
 	// Usuń pierwszy i ostatni element
 	remove_first( &list );
 	remove_last( list );
