@@ -181,9 +181,11 @@ void remove_by_val(node_t * head, int req)
     while (current != NULL) {
         if (current->next->val == req) {
             free(current->next);
+            break;
         }
         current = current->next;
     }
+    free(current->next);
 }
 
 
