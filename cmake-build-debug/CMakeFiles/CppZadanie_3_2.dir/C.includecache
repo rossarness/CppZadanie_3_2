@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/skorban/Dropbox (Osobiste)/Kodowanie/Algorytmy/CppZadanie 3.2/lista.c
+stdio.h
+-
+stdlib.h
+-
+

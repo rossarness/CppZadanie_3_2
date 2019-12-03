@@ -174,23 +174,29 @@ remove_by_index(int num) {
 }
 
 
-void remove_by_val(node_t * head, int req)
-{
-    node_t * current = head;
+void remove_by_val(node_t * head, int req) {
+    node_t *current = head;
 
-    while (current != NULL) {
-        if (current->next->val == req) {
-            free(current->next);
-            break;
-        }
+    if (current != NULL && current->val == req) {
+        head = current->next;
+        free(current);
+        return;
+    }
+
+    while (current != NULL && current->val != req) {
+        head = current;
         current = current->next;
     }
-    free(current->next);
+
+    if (current == NULL) return;
+
+    head->next = current->next;
+    free(current);
 }
 
 
 
-//remove_by_index.remove_by_val
+//remove_by_index(node_t * head, int index)
 
 
 /** A teraz proste przykłady użycia tej prostej listy jednokierunkowej */
