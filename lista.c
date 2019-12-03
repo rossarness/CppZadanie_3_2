@@ -28,7 +28,7 @@ typedef struct node {
 
 
 /* create_node tworzy nowy element listy na stercie i zwraca wskaźnik do tego elementu
- * W przypadku gdy funkcja malloc nie powiedzie zzwraca NULL co oznacza to ze nie możemy zaalokować pamięci
+ * W przypadku gdy funkcja malloc nie powiedzie sie, zwraca NULL co oznacza to ze nie możemy zaalokować pamięci
  * i zwracana jest wartość NULL.
  * Utworzenie nowego węzła polega na zaalokowaniu pamięci dla tego węzła a następnie w
  * zaalokowanej pamięci przechowującej strukturę do pola val wpisywana jest wartość
@@ -49,7 +49,6 @@ node_t* create_node(int val)
 	head->val = val;
 	head->next = NULL;
 }
-
 
 /** Funkcja print_list przechodzi przez wszystkie elementy listy
  * oraz wypisuje zawartość wszystkich elementów. Jest to zatem operacja która
@@ -169,6 +168,26 @@ int remove_last(node_t * head) {
 
 }
 
+/** Zadanie do wykonania */
+remove_by_index(int num) {
+
+}
+
+
+void remove_by_val(node_t * head, int req)
+{
+    node_t * current = head;
+
+    while (current != NULL) {
+        if (current->next == req) {
+            free(current->next);
+        }
+        current = current->next;
+    }
+}
+
+
+
 //remove_by_index.remove_by_val
 
 
@@ -198,5 +217,6 @@ int main() {
 	// Wypisz wszystkie elemnty na liście teraz lista zawiera wartości od 2 do 5
 	// usunieto pierwszy element z początku i końca listy
 	print_list( list );
+	getchar();
 }
 
