@@ -176,10 +176,11 @@ remove_by_index(int num) {
 
 void remove_by_val(node_t * head, int req)
 {
+    int retval = 0;
     node_t * current = head;
 
     while (current != NULL) {
-        if (current->next == req) {
+        if (current->next->val == req) {
             free(current->next);
         }
         current = current->next;
